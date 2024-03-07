@@ -1,0 +1,50 @@
+@import '../root.css';
+.container{
+    background-color:var(--d-clr-2);
+    margin:2em 0;
+    display:flex;
+    padding:1.5em 3em;
+    gap:3em;
+    border-radius:1em;
+    align-items:center;
+}
+.btn{
+    width:32px;
+    height:32px;
+    border:1px solid var(--d-clr-5);
+    border-radius:50%;
+    aspect-ratio:1/1;
+    background-color:var(--d-clr-2);
+    cursor:pointer;
+}
+.input{
+    width:100%;
+    background-color:var(--d-clr-2);
+    border:none;
+    font-size:1.8rem;
+    color:var(--d-clr-4);
+    caret-color:var(--d-clr-4);
+}
+.input::placeholder{
+    color:var(--d-clr-6);
+}
+
+.input:focus{
+    outline:none;  
+}
+
+@media (max-width:709px){
+    .input{
+        font-size:1.5rem;
+    }
+}
+
+@media(min-width:320px) and (max-width:500px){
+    .btn{
+        width:28px;
+        height:28px;
+    }
+    .input{
+        width:100%;
+    }
+}

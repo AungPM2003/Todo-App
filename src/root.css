@@ -1,0 +1,16 @@
+:root{
+    --primary-clr: hsl(220, 98%, 61%);
+    --primary-bg:linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    --d-clr-1: hsl(235, 21%, 11%);
+    --d-clr-2:hsl(235, 24%, 19%);
+    --d-clr-3: hsl(234, 39%, 85%);
+    --d-clr-4:hsl(236, 33%, 92%);
+    --d-clr-5:hsl(234, 11%, 52%);
+    --d-clr-6: hsl(233, 14%, 35%);
+    --d-clr-7:hsl(237, 14%, 26%);
+
+    --primary-fs:18px;
+    --fw-1:400;
+    --fw-2:700;
+}

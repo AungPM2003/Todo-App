@@ -1,0 +1,12 @@
+@import '../root.css';
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.navTitle{
+    color:#fff;
+    font-size:4rem;
+    font-weight:var(--fw-2);
+    letter-spacing:1.5rem;
+}
