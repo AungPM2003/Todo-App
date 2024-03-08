@@ -8,16 +8,19 @@ const storedValue = localStorage.getItem("todo")
 const initialState = {
   tasks:storedValue ? JSON.parse(storedValue) : []
 }
-// console.log(storedValue)
+const ADD_TASk = "addTask";
+const CHANGE_ACTIVE = "changeActive";
+const REMOVE_TASK = "removeTask";
+const CLEAR_COMPLETE = "clearComplete";
 function reducer(state,action){
   switch(action.type){
-    case "addTask":
+    case ADD_TASk:
       if (action.payLoad === "") return {...state}
       return {
           ...state,
           tasks:[...state.tasks,{name:action.payLoad,active:false}]
         }
-    case "changeActive":
+    case CHANGE_ACTIVE:
       return{
         ...state,
         tasks:state.tasks.map((task) =>{
@@ -27,12 +30,12 @@ function reducer(state,action){
           return {...task}
         })
       }
-    case "removeTask":
+    case REMOVE_TASK:
       return{
         ...state,
         tasks:state.tasks.filter(task => task.name != action.payLoad )
       }
-    case "clearCompelete":
+    case CLEAR_COMPLETE:
       return{
         ...state,
         tasks:state.tasks.filter(task => task.active != true)
@@ -47,7 +50,8 @@ export default function App() {
   const {tasks} = state
   useEffect(function(){
     localStorage.setItem("todo",JSON.stringify(tasks))
-  },[tasks,"todo"])
+  },[tasks])
+  
   return (
     <BrowserRouter>
       <Routes>

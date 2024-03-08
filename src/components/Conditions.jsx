@@ -13,7 +13,7 @@ export default function Conditions({numTask,dispatch}) {
         <div className={styles.conditions}>
            <Link/>
         </div>
-        <div onClick={() => dispatch({type:"clearCompelete"})} style={{cursor:"pointer"}}>Clear Completed</div>
+        <div onClick={() => dispatch({type:"clearComplete"})} style={{cursor:"pointer"}}>Clear Completed</div>
     </div>
   )
 }
