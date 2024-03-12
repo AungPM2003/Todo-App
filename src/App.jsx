@@ -8,6 +8,8 @@ const storedValue = localStorage.getItem("todo")
 const initialState = {
   tasks:storedValue ? JSON.parse(storedValue) : []
 }
+
+
 const ADD_TASk = "addTask";
 const CHANGE_ACTIVE = "changeActive";
 const REMOVE_TASK = "removeTask";
@@ -15,11 +17,16 @@ const CLEAR_COMPLETE = "clearComplete";
 function reducer(state,action){
   switch(action.type){
     case ADD_TASk:
-      if (action.payLoad === "") return {...state}
-      return {
+      if (action.payLoad === "") return {...state};
+      if(!state.tasks.map(task => task.name).includes(action.payLoad)){
+        return{
           ...state,
           tasks:[...state.tasks,{name:action.payLoad,active:false}]
         }
+      }else{
+        return state
+      }
+
     case CHANGE_ACTIVE:
       return{
         ...state,
